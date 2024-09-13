@@ -51,19 +51,16 @@ function capitalize(humanSelection, computerSelection) {
 
 // Start of the game
 function playGame() {
-    while (humanScore < 3 && computerScore < 3) {
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()
-    
-        playRound(humanSelection, computerSelection)
-        console.log(`Your score ${humanScore} | Computer score ${computerScore}`)
+
+    for (let i = 0; i < 3; i++) {
+       const humanSelection = getHumanChoice()
+       const computerSelection = getComputerChoice()
+
+       playRound(humanSelection, computerSelection)
+       console.log(`Your score ${humanScore} | Computer score ${computerScore}`)
     }
 
-    if (humanScore === 3) {
-        console.log('YOU ARE THE WINNER!')
-    } else {
-        console.log('YOU LOSE TO A COMPUTER!')
-    }
+    humanScore === 3 ? console.log('Winner') : console.log('loser')
 }
 
 playGame()
